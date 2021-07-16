@@ -141,11 +141,8 @@ body {
 	const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const transId = urlParams.get('transId');
-    document.getElementsByName('transId')[0].value = transId;
     const subId = urlParams.get('subId');
-    document.getElementsByName('subId')[0].value = subId;
     const merchant_code = urlParams.get('merchant_code');
-    document.getElementsByName('merchant_code')[0].value = merchant_code;
     const check_sum = urlParams.get('check_sum');
 	$('#platinum-cashback').attr('src', 'http://sacombank-platinum-cashback.dangkymothe.com?transId=' + transId +'&subId=' + subId + '&merchant_code=DAGORAS08&check_sum=' + check_sum);
 	
