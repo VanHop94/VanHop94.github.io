@@ -157,7 +157,7 @@ body {
 	if (tabID === '2') {
 		var tab2Src = $('#platinum').attr('src');
 		if(tab2Src === '') {
-			$('#platinum').attr('src', 'http://sacombank-platinum.dangkymothe.com?transId=' + transId +'&subId=' + subId + '&merchant_code=DAGORAS08&check_sum=' + check_sum);
+			$('#platinum').attr('src', 'http://sacombank-platinum.dangkymothe.com?transId=' + transId +'&subId=' + subId + '&merchant_code=DAGORAS08&check_sum=' + encodeURIComponent(check_sum));
 		}
 	}
 });
