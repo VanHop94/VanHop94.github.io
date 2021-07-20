@@ -144,8 +144,11 @@ body {
     const subId = urlParams.get('subId');
     const merchant_code = urlParams.get('merchant_code');
     const check_sum = urlParams.get('check_sum');
-	$('#platinum-cashback').attr('src', 'http://sacombank-platinum-cashback.dangkymothe.com?transId=' + transId +'&subId=' + subId + '&merchant_code=DAGORAS08&check_sum=' + encodeURIComponent(check_sum));
-	
+	if (subId) {
+		$('#platinum-cashback').attr('src', 'http://sacombank-platinum-cashback.dangkymothe.com?transId=' + transId +'&subId=' + subId + '&merchant_code=DAGORAS08&check_sum=' + encodeURIComponent(check_sum));
+	} else {
+		$('#platinum-cashback').attr('src', 'http://sacombank-platinum-cashback.dangkymothe.com');
+	}
 	$('.tab-link').click( function() {
 	
 	var tabID = $(this).attr('data-tab');
@@ -157,7 +160,12 @@ body {
 	if (tabID === '2') {
 		var tab2Src = $('#platinum').attr('src');
 		if(tab2Src === '') {
-			$('#platinum').attr('src', 'http://sacombank-platinum.dangkymothe.com?transId=' + transId +'&subId=' + subId + '&merchant_code=DAGORAS08&check_sum=' + encodeURIComponent(check_sum));
+			if (subId){
+				$('#platinum').attr('src', 'http://sacombank-platinum.dangkymothe.com?transId=' + transId +'&subId=' + subId + '&merchant_code=DAGORAS08&check_sum=' + encodeURIComponent(check_sum));
+			} else {
+				$('#platinum').attr('src', 'http://sacombank-platinum.dangkymothe.com');
+
+			}
 		}
 	}
 });
